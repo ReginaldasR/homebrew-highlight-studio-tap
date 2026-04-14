@@ -1,6 +1,6 @@
   cask "highlight-studio" do
     version "0.1.0"
-    sha256 "1b5ebfb5745e7736308f8bac0821e00f93d863379f628134fa67d72a5af7c53b"
+    sha256 "b96e894cddbc1ef6596729e357ba8b3b9e6967e39206f9b64a40f8e9756f07ee"
 
     url "https://pub-6f1ad3727de34676a913c03751f097e4.r2.dev/releases/#{version}/Video-Highlight-Finder.app.zip"
     name "Highlight Studio"
