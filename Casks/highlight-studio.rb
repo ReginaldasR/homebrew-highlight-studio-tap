@@ -6,7 +6,7 @@ cask "highlight-studio" do
     url "https://pub-6f1ad3727de34676a913c03751f097e4.r2.dev/releases/#{version}/Video-Highlight-Finder-arm64.app.zip"
   end
   on_intel do
-    sha256 :no_check # replace with actual sha256 after building Intel zip
+    sha256 "b9b3e00b88ec86b65f1e55b4fc0c9a1698bec1c68a87eb894d22fb84519ffd1f" # replace with actual sha256 after building Intel zip
     url "https://pub-6f1ad3727de34676a913c03751f097e4.r2.dev/releases/#{version}/Video-Highlight-Finder-intel.app.zip"
   end
 
