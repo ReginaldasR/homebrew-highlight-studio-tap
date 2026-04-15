@@ -1,13 +1,29 @@
-  cask "highlight-studio" do
-    version "0.1.0"
-    sha256 "b96e894cddbc1ef6596729e357ba8b3b9e6967e39206f9b64a40f8e9756f07ee"
+cask "highlight-studio" do
+  version "0.1.0"
 
-    url "https://pub-6f1ad3727de34676a913c03751f097e4.r2.dev/releases/#{version}/Video-Highlight-Finder.app.zip"
-    name "Highlight Studio"
-    desc "Offline desktop app for building highlight reels from local video"
-    homepage "https://github.com/ReginaldasR/highlight-studio"
-
-    depends_on macos: ">= :ventura"
-
-    app "Video Highlight Finder.app"
+  on_arm do
+    sha256 "d400fc481094b86ce62a39d481d03947ac6d1ac0a83dd265fbb7808b06c5f111"
+    url "https://pub-6f1ad3727de34676a913c03751f097e4.r2.dev/releases/#{version}/Video-Highlight-Finder-arm64.app.zip"
   end
+  on_intel do
+    sha256 :no_check # replace with actual sha256 after building Intel zip
+    url "https://pub-6f1ad3727de34676a913c03751f097e4.r2.dev/releases/#{version}/Video-Highlight-Finder-intel.app.zip"
+  end
+
+  name "Highlight Studio"
+  desc "Offline desktop app for building highlight reels from local video"
+  homepage "https://github.com/ReginaldasR/highlight-studio-app"
+
+  depends_on macos: ">= :ventura"
+
+  app "Video Highlight Finder.app"
+
+  caveats <<~EOS
+    This app bundles its local backend plus ffmpeg/ffprobe.
+
+    Ollama is optional. Install and run it only if you want to use a local Ollama
+    provider, then pull the models you plan to use, for example:
+      ollama pull llama3.2-vision
+      ollama pull gemma4:e4b
+  EOS
+end
